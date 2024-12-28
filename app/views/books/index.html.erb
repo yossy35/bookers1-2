@@ -1,4 +1,18 @@
-<h1>New book</h1>
+<h1>Books</h1>
+
+<table>
+<tr><th>Title</th><th>Body</th><th>No</th></tr>
+<tr><td>リーダブルコード</td><td>より良いコードを書くためのシンプルで実践的なテクニック</td><td>show edit destroy</td></tr>
+</table>
+
+<% @books.each do |book| %>
+  <p>Title</p>
+  <span><%= book.title %></span>
+  <p>Body</p>
+  <span><%= book.body %></span>
+<% end %>
+
+<h2>New book</h12>
 
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
   <p>Title</p>
