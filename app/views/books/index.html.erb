@@ -1,18 +1,14 @@
-<h1>Books</h1>
-
-<table>
-<tr><th>Title</th><th>Body</th><th>No</th></tr>
-<tr><td>リーダブルコード</td><td>より良いコードを書くためのシンプルで実践的なテクニック</td><td>show edit destroy</td></tr>
-</table>
-
+<h2>New book投稿一覧</h2>
 <% @books.each do |book| %>
   <p>Title</p>
-  <span><%= book.title %></span>
+  <span>
+    <%= link_to book.title, book_path(book.id) %>
+  </span>
   <p>Body</p>
-  <span><%= book.body %></span>
+  <span>
+    <%= link_to book.body, book_path(book.id) %>
+  </span>
 <% end %>
-
-<h2>New book</h12>
 
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
   <p>Title</p>
