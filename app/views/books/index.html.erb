@@ -1,4 +1,12 @@
-<h2>New book投稿一覧</h2>
+<h1>Books</h1>
+
+<table>
+<tr>
+  <th>Title</th>
+  <th>Body</th>
+  <th>No</th>
+</tr>
+
 <% @books.each do |book| %>
   <p>Title</p>
   <span>
@@ -10,7 +18,9 @@
   </span>
 <% end %>
 
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
+<h2>New book投稿一覧</h2>
+
+<%= form_with model: @book do |f| %>
   <p>Title</p>
   <%= f.text_field :title %>
   <p>Body</p>
